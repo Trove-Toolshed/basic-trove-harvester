@@ -9,6 +9,13 @@ class ServerError(Exception):
 
 
 class TroveHarvester:
+	"""
+	A basic harvester for downloading records via the Trove API.
+	You'll want to subclass this and, at a minimum, overwrite 
+	process_results() to actually do something with the stuff
+	you're harvesting.
+
+	"""
 
 	def __init__(self, query, key, start=0, number=20):
 		self.query = self._clean_query(query)
